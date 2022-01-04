@@ -51,7 +51,7 @@ public class Solution
                     }
                     return o1.getFname().compareTo(o2.getFname());
                 }
-                return (int) Math.round(o1.getCgpa() - o2.getCgpa());
+                return Double.compare(o2.getCgpa(), o1.getCgpa());
             }
         });
 
