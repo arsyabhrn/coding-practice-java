@@ -42,6 +42,19 @@ public class Solution
             testCases--;
         }
 
+        Collections.sort(studentList, new Comparator<Student>() {
+            @Override
+            public int compare(Student o1, Student o2) {
+                if (o1.getCgpa() == o2.getCgpa()) {
+                    if (o1.getFname().equals(o2.getFname())) {
+                        return o1.getId() - o2.getId();
+                    }
+                    return o1.getFname().compareTo(o2.getFname());
+                }
+                return Double.compare(o2.getCgpa(), o1.getCgpa());
+            }
+        });
+
         for(Student st: studentList){
             System.out.println(st.getFname());
         }
