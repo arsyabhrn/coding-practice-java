@@ -56,13 +56,20 @@ public class Solution {
         // 'largest' must be the lexicographically largest substring of length 'k'
 
         for (int i = 0 ; i <= s.length() - k; i++) {
-            s.substring()
-        }
+            String temp = s.substring(i, (i+k));
 
-        while (k <= s.length() + 1) {
-            int index = 0;
-            s.substring(index, (index + k));
-            index++;
+            if (i == 0) {
+                smallest = temp;
+                largest = temp;
+            }
+
+            if (temp.compareTo(smallest) < 0) {
+                smallest = temp;
+            }
+
+            if (temp.compareTo(largest) > 0) {
+                largest = temp;
+            }
         }
 
         return smallest + "\n" + largest;
